@@ -1,0 +1,21 @@
+type Videojuego {
+    id: ID!
+    titulo: String!
+    genero: String!
+    estudio: Estudio
+}
+
+type Estudio {
+    id: ID!
+    nombre: String!
+    pais: String!
+}
+
+type Query {
+    videojuegos: [Videojuego]
+    videojuegoPorId(id: ID!): Videojuego
+}
+
+type Mutation {
+    agregarVideojuego(titulo: String!, genero: String!, estudioId: ID!): Videojuego
+}
